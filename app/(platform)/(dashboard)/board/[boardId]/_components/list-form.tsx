@@ -42,6 +42,7 @@ export const ListForm = () => {
     },
   });
 
+  // TO DISABLE EDITING WHEN ESC KEY IS PRESSED
   const onKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       disableEditing();

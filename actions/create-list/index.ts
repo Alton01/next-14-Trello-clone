@@ -37,6 +37,8 @@ const handler = async (data: InputType): Promise<ReturnType> => {
             };
         }
 
+
+        //DETERMINING THE  LAST LIST IN A BOARD SO THAT A NEWLIST CAN BE ADDED AFTER THAT LIST
         const lastList = await db.list.findFirst({
             where: {boardId: boardId},
             orderBy: { order: "desc"},

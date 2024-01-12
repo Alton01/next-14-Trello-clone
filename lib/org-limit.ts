@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { db } from "@/lib/db";
 import { MAX_FREE_BOARDS } from "@/constants/boards";
 
-
+//FOR INCREASING AVAILABLE BOARD COUNT
 export const incrementAvailableCount = async () => {
     const { orgId } = auth()
 
@@ -26,7 +26,7 @@ export const incrementAvailableCount = async () => {
     }
 };
 
-
+//FOR DECREASING AVAILABLE BOARD COUNT
 export const decreaseAvailableCount = async () => {
     const { orgId } = auth()
 

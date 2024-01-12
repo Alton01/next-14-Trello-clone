@@ -41,6 +41,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         return { error: "List not found"}
       }
 
+      // TO DETERMINE THE LAST LIST IN A BOARD
       const lastList = await db.list.findFirst({
         where: {
             boardId
@@ -51,6 +52,8 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
       const newOrder = lastList ? lastList.order + 1 : 1;
 
+
+      //FUNCTION FOR CREATING THE NEW LIST THAT HAS BEEN COPIED
       list = await db.list.create({
         data: {
             boardId: listToCopy.boardId,

@@ -25,7 +25,7 @@ export async function POST(req: Request) {
         return new NextResponse("Webhook error", { status: 400});
     }
 
-
+// IF A USER CREATES ASUBSCRIPTION FOR THEFIRST TIME.  THIS IS FOR CREATION OF SUBSCRIPTION FOR THE FIRST TIME
     const session = event.data.object as Stripe.Checkout.Session;
 
     if (event.type === "checkout.session.completed") {
@@ -51,6 +51,8 @@ export async function POST(req: Request) {
         });
     }
 
+
+    // IF A USER RENEWS THEIR SUBSCRIPTION. THIS IS FOR RENEWAL OF SUBSCRIPTION
     if (event.type === "invoice.payment_succeeded") {
         const subscription = await stripe.subscriptions.retrieve(
             session.subscription as string

@@ -49,8 +49,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
     },
   });
 
-  ///////////////////////////////////////
-
+  /////////////////////////////////////// FOR WHEN DATA UPDATES TO USE OPTIMISTIC UPDATE
   useEffect(() => {
     setOrderedData(data);
   }, [data]);
@@ -84,7 +83,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
     if (type === "card") {
       let newOrderedData = [...orderedData];
 
-      //SOURCE ANDDESTINATION LIST
+      //SOURCE AND DESTINATION LIST
       const sourceList = newOrderedData.find(
         (list) => list.id === source.droppableId
       );
@@ -96,7 +95,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
         return;
       }
 
-      //IF CARDS PROPERTY DOES NOT EXIST ON LIST
+      //IF CARDS PROPERTY DOES NOT EXIST ON SOURCE LIST
       if (!sourceList.cards) {
         sourceList.cards = [];
       }

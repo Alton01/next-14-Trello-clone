@@ -7,6 +7,8 @@ import { ProModal } from "@/components/modals/card-modal/pro-modal";
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
 
+  //TO PROTECT FROM HYDRATION ERRORS.
+
   useEffect(() => {
     setIsMounted(true);
   }, []);

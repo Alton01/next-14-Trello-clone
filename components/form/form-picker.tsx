@@ -23,6 +23,7 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImageId, setSelectedImageId] = useState(null);
 
+  // useEffect for fetching unsplash images using unsplash api
   useEffect(() => {
     const fetchImages = async () => {
       try {

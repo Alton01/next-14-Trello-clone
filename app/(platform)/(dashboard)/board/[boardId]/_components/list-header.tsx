@@ -59,10 +59,12 @@ export const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
     });
   };
 
+  // for submitting form when a user leaves the input form and clicks on an a spot outside the  input form
   const onBlur = () => {
     formRef.current?.requestSubmit();
   };
 
+  // For submitting form when the esc key has been pressed
   const onKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       formRef.current?.requestSubmit();

@@ -40,6 +40,7 @@ export const Header = ({ data }: HeaderProps) => {
   const inputRef = useRef<ElementRef<"input">>(null);
   const [title, setTitle] = useState(data.title);
 
+  //FOR UPDATING TITLE WHEN A USER CLICKS OUTSIDE THE INPUT FORM
   const onBlur = () => {
     inputRef.current?.form?.requestSubmit();
   };
