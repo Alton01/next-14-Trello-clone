@@ -48,7 +48,7 @@ export const BoardList = async () => {
             <p className="relative font-semibold text-white">{board.title}</p>
           </Link>
         ))}
-        <FormPopover sideOffset={10} side="right">
+        <FormPopover sideOffset={10} side="bottom">
           <div
             role="button"
             className="aspect-video relative h-full w-full bg-muted rounded-sm
