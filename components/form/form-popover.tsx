@@ -33,6 +33,8 @@ export const FormPopover = ({
 }: FormPopoverProps) => {
   const proModal = useProModal();
   const router = useRouter();
+
+  // FOR CLOSING POPOVER ON FORM SUBMIT
   const closeRef = useRef<ElementRef<"button">>(null);
 
   const { execute, fieldErrors } = useAction(createBoard, {
